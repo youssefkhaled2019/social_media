@@ -1,0 +1,3 @@
+ day_1    create vm
+          create project  "socialmedia"
+-----------------------------------------

@@ -2,7 +2,11 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
+# ==================================
+runserver.bat
+go.bat
+openproject.bat
+# ==================================
 # C extensions
 *.so
 

@@ -1,0 +1,134 @@
+
+code .
+
+
+
+
+
+--------------------------
+python -m venv env
+env\Scripts\activate
+pip install django
+cd SocialMedia
+django-admin startproject  SocialMedia .
+code .
+-------------------------------
+
+
+python manage.py runserver
+python manage.py migrate  
+
+python manage.py startapp blog   # for add app  name is pages
+
+
+pip list
+pip freeze > requirements.txt
+pip3 install -r requirements.txt 
+
+
+tree
+
+------------------------------------------
+django-admin
+    [django]
+        check
+        compilemessages
+        createcachetable
+        dbshell
+        diffsettings
+        dumpdata
+        flush
+        inspectdb
+        loaddata
+        makemessages
+        makemigrations
+        migrate
+        optimizemigration
+        runserver
+        sendtestemail
+        shell
+        showmigrations
+        sqlflush
+        sqlmigrate
+        sqlsequencereset
+        squashmigrations
+        startapp
+        startproject
+        test
+        testserver
+--------------bootstrap-------------------
+https://getbootstrap.com/docs/4.6/getting-started/introduction/
+
+------------data base--------------------
+python manage.py sqlmigrate blog 0001
+
+
+
+--------------crispy-------------------
+pip install crispy-bootstrap4
+--seting.py-----
+INSTALLED_APPS = (
+...
+"crispy_forms",
+"crispy_bootstrap4",
+...
+)
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+
+
+-----.html------
+{% load crispy_forms_tags %}
+{{form|crispy}}
+
+
+
+
+
+
+------------------------
+{% load static %}
+{% static 'blog/main.css' %}
+
+{% block content %}{% endblock %}
+
+{% extends 'blog/layout.html' %}
+
+
+------------------------
+>>> python manage.py shell
+from blog.models import Post
+from django.contrib.auth.models import User
+User.objects.all()
+User.objects.first()
+User.objects.filter(username='youssef')
+User.objects.filter(username='youssef').first()
+user=User.objects.filter(username='youssef').first()
+user.id
+user.pk
+user=User.objects.get(id=1)
+Post.objects.all()
+post_1=Post(title="post 12",content="welcome",author=user)
+post_1.save()
+exit()
+user=User.objects.filter(username='youssef').first()
+post_3=Post(title="post dfdfd",content="dfdfsdfd",author_id=user.id)
+post_3.save()
+post_3.date_posted
+post_3.author
+post_3.author.email
+user.post_set.all()
+user.post_set.all().count()
+-----------------------------
+
+from django.contrib.auth.models import User
+user=User.objects.filter(username='youssef').first()
+user.profile
+user.profile.image
+user.profile.image.width
+user.profile.image.url 
+-------------------------------
+pip install Pillow

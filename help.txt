@@ -1,34 +1,7 @@
 
-code .
-
-
-
-
-
---------------------------
-python -m venv env
-env\Scripts\activate
-pip install django
-cd SocialMedia
-django-admin startproject  SocialMedia .
-code .
--------------------------------
-
-
-python manage.py runserver
-python manage.py migrate  
-
-python manage.py startapp blog   # for add app  name is pages
-
-
-pip list
-pip freeze > requirements.txt
-pip3 install -r requirements.txt 
-
-
-tree
-
-------------------------------------------
+python --version
+pip --version 
+django-admin --version
 django-admin
     [django]
         check
@@ -56,6 +29,56 @@ django-admin
         startproject
         test
         testserver
+
+
+
+-------------create vm+django-------------------
+python -m venv env   #env/
+env\Scripts\activate
+pip install django
+django-admin startproject  SocialMedia .
+code .
+python.exe -m pip install --upgrade pip
+python manage.py startapp app
+-------------------------------
+
+
+
+
+django-admin startproject projentname   #create project name  
+python manage.py runserver            #runserver
+python manage.py migrate   # for update 18 unapplied migration(s)
+python manage.py startapp pages   # for add app  name is pages
+
+python manage.py collectstatic       #static floder
+
+python manage.py createsuperuser    # create new user  (admen)
+
+python manage.py makemigrations  #add models in files django
+
+
+rm db.sqlite3
+------------------------
+templates\index.html
+------------------------
+{% load static %}
+{% static 'blog/main.css' %}
+
+{% block content %}{% endblock %}
+{% include 'partials/_navebar.html' %}
+
+{% extends 'blog/layout.html' %}
+----------------------------------
+
+pip list
+pip freeze > requirements.txt
+pip3 install -r requirements.txt 
+
+
+tree
+
+------------------------------------------
+
 --------------bootstrap-------------------
 https://getbootstrap.com/docs/4.6/getting-started/introduction/
 
@@ -89,13 +112,7 @@ CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 
 
-------------------------
-{% load static %}
-{% static 'blog/main.css' %}
 
-{% block content %}{% endblock %}
-
-{% extends 'blog/layout.html' %}
 
 
 ------------------------

@@ -3,4 +3,13 @@
 -----------------------------------------
  v2  create app "blog"
      create home and about  pages
------------------------------------------          
+-----------------------------------------
+v3-v4     install bootstrap
+          connect home and about with blog app
+          bootstrap -navbar
+                -content-section(Sidebar)
+                -content-section (post)
+          add folder static content  file : main.css           
+          -create damy data for show in home pages 
+          -admin page
+-----------------------------------------   

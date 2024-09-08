@@ -55,7 +55,7 @@ python manage.py collectstatic       #static floder
 python manage.py createsuperuser    # create new user  (admen)
 
 python manage.py makemigrations  #add models in files django
-
+python manage.py migrate
 
 rm db.sqlite3
 ------------------------

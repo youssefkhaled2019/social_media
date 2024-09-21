@@ -13,3 +13,8 @@ v3-v4     install bootstrap
           -create damy data for show in home pages 
           -admin page
 -----------------------------------------   
+v_5       create  post model
+          connect user model with post model as ForeignKey
+          add data in   post model
+          connect view with model and show data in home page
+-----------------------------------------          

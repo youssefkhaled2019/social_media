@@ -1,0 +1,28 @@
+python manage.py sqlmigrate blog 0001
+----------------------------------------
+>>> python manage.py shell
+from blog.models import Post
+from django.contrib.auth.models import User
+User.objects.all()
+User.objects.first()
+User.objects.filter(username='youssef')
+User.objects.filter(username='youssef').first()
+user=User.objects.filter(username='youssef').first()
+user.id
+user.pk
+user=User.objects.get(id=1)
+Post.objects.all()
+post_1=Post(title="post 12",content="welcome",author=user)
+post_1.save()
+exit()
+user=User.objects.filter(username='youssef').first()
+post_3=Post(title="post dfdfd",content="dfdfsdfd",author_id=user.id)
+post_3.save()
+post_3.date_posted
+post_3.author
+post_3.author.email
+user.post_set.all()
+user.post_set.all().count()
+user.post_set.create(title="",content="")
+----------------------------------------
+{{ post.date_posted |date:"F d, Y" }}

@@ -18,3 +18,6 @@ v_5       create  post model
           add data in   post model
           connect view with model and show data in home page
 -----------------------------------------          
+v_6       install crispy forms
+          create register pages   and  connect user model
+-----------------------------------------

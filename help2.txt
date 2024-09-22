@@ -26,3 +26,22 @@ user.post_set.all().count()
 user.post_set.create(title="",content="")
 ----------------------------------------
 {{ post.date_posted |date:"F d, Y" }}
+-------------------------------------------
+
+--------------crispy-------------------
+>>> pip install crispy-bootstrap4
+--seting.py-----
+INSTALLED_APPS = (
+...
+"crispy_forms",
+"crispy_bootstrap4",
+...
+)
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+
+-----.html------
+{% load crispy_forms_tags %}
+{{form|crispy}}
+-----------------------------------------------

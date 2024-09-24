@@ -21,3 +21,7 @@ v_5       create  post model
 v_6       install crispy forms
           create register pages   and  connect user model
 -----------------------------------------
+v_7          -create   login ,logout ,profile  templates
+             -use Authentication system  protection home and profile pages  by login_required
+              and must user is Authentication by user.is_authenticated
+-----------------------------------------------   

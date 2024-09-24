@@ -30,8 +30,25 @@
                     </div>
                 <!-- Navbar Right Side -->
                     <div class="navbar-nav">
-                        <a class="nav-item nav-link" href="#">Login</a>
-                        <a class="nav-item nav-link" href="#">Register</a>
+                      {% if user.is_authenticated %}
+                      
+                      <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
+                      {% if user.is_superuser %}
+                      <a class="nav-item nav-link" href="{% url 'admin:index' %}">Admin</a>  
+                      {% endif %}
+                      <!-- <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a> -->
+                      
+                      <form  class="nav-item " action="{% url 'logout' %}" method="post">
+                        {% csrf_token %}
+                        <!-- <button class="btn btn-light" type="submit">Log out</button> -->
+                        <!-- <input  type="submit">Log out</input> -->
+                        <input class="nav-link" type="submit" value="Log out" style="background: none; border: none;">
+                      </form> 
+    
+                      {% else %}
+                      <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+                      <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+                      {% endif %}
                     </div>
                 </div>
           </div>

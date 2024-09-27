@@ -25,3 +25,6 @@ v_7          -create   login ,logout ,profile  templates
              -use Authentication system  protection home and profile pages  by login_required
               and must user is Authentication by user.is_authenticated
 -----------------------------------------------   
+v_8          create profile model
+             change in profile template
+             -create signals.py for create new row for user register for add profile image 

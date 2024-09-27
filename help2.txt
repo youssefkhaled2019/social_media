@@ -24,6 +24,18 @@ post_3.author.email
 user.post_set.all()
 user.post_set.all().count()
 user.post_set.create(title="",content="")
+
+-----------------------------------------------
+from django.contrib.auth.models import User
+user=User.objects.filter(username='youssef').first()
+user.profile
+user.profile.image
+user.profile.image.width
+user.profile.image.url 
+-----------------------------------------------
+pip install Pillow
+-----------------------------------------------
+
 ----------------------------------------
 {{ post.date_posted |date:"F d, Y" }}
 -------------------------------------------
@@ -45,3 +57,14 @@ CRISPY_TEMPLATE_PACK = "bootstrap4"
 {% load crispy_forms_tags %}
 {{form|crispy}}
 -----------------------------------------------
+
+
+
+
+
+runserver.bat
+go.bat
+openproject.bat
+media/profile_pics
+help.txt
+help2.txt

@@ -28,3 +28,8 @@ v_7          -create   login ,logout ,profile  templates
 v_8          create profile model
              change in profile template
              -create signals.py for create new row for user register for add profile image 
+-----------------------------------------------
+v_9        create UserUpdateForm ,ProfileUpdateForm  form for update data and image in profile pages
+             change in profile template add forms and
+             -resize image profile upload in profile model  by override save function
+             change in home template add image pofile in article section             

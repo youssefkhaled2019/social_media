@@ -3,12 +3,11 @@ __pycache__/
 *.py[cod]
 *$py.class
 # ==================================
-*.txt
 runserver.bat
 go.bat
 openproject.bat
 media/profile_pics
-
+help.txt
 # ==================================
 # C extensions
 *.so

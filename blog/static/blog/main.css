@@ -8,6 +8,14 @@ body {
     color: #444444;
   }
   
+  .link-button { 
+    background: none;
+    border: none;
+    color: #210feb;
+    text-decoration: underline;
+    cursor: pointer; 
+   } 
+   
   ul {
     margin: 0;
   }

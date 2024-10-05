@@ -68,3 +68,41 @@ openproject.bat
 media/profile_pics
 help.txt
 help2.txt
+
+
+-----------------------[logout]-------------------------------
+<form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <!-- <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a> -->
+            
+            <!-- <input  class="nav-item nav-link " type="submit" value="Logout"> -->
+            
+            <!-- <a class="nav-item nav-link "  onclick="$(this).closest('form').submit(); return false;">Logout</a> -->
+            <a class="nav-item nav-link "  onclick="parentNode.submit();return false;">Logout</a>
+
+</form>
+-----------------------------
+<form  class="nav-item " action="{% url 'logout' %}" method="post">
+    {% csrf_token %}
+    <!-- <button class="btn btn-light" type="submit">Log out</button> -->
+    <!-- <input  type="submit">Log out</input> -->
+    <input class="nav-link" type="submit" value="Log out" style="background: none; border: none;">
+</form> 
+------------------------------------------------------
+   <form  class="nav-item " action="{% url 'logout' %}" method="post">
+                        {% csrf_token %}
+                        <!-- <button class="btn btn-light" type="submit">Log out</button> -->
+                        <!-- <input  type="submit">Log out</input> -->
+                        <input class="nav-link" type="submit" value="Log out" style="background: none; border: none;">
+                      </form> 
+------------------------------------------------------                      
+      <form action="{% url 'logout' %}" method="post">
+                  {% csrf_token %}
+                  <!-- <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a> -->
+                  
+                  <!-- <input  class="nav-item nav-link " type="submit" value="Logout"> -->
+                 
+                  <!-- <a class="nav-item nav-link "  onclick="$(this).closest('form').submit(); return false;">Logout</a> -->
+                  <a class="nav-item nav-link "  onclick="parentNode.submit();return false;">Logout</a>
+                </form>
+------------------------------------------------------                

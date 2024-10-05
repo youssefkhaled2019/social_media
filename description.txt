@@ -32,4 +32,8 @@ v_8          create profile model
 v_9        create UserUpdateForm ,ProfileUpdateForm  form for update data and image in profile pages
              change in profile template add forms and
              -resize image profile upload in profile model  by override save function
-             change in home template add image pofile in article section             
+             change in home template add image pofile in article section 
+-----------------------------------------------
+v_10     create PostListView ,PostDetailView,PostCreateView,PostUpdateView,PostDeleteView  by views class 
+         change Authentication system by LoginRequiredMixin for log in 
+         UserPassesTestMixin   for not change any content he is not owner

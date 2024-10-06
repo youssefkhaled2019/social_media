@@ -106,3 +106,88 @@ help2.txt
                   <a class="nav-item nav-link "  onclick="parentNode.submit();return false;">Logout</a>
                 </form>
 ------------------------------------------------------                
+
+
+------------------------------------------------------
+------------------------------------------------------
+
+
+--------------------------------------
+python manage.py shell
+
+>>> import json
+>>> from blog.models import Post
+>>> with open('posts.json') as f:  #C:\Users\you\Downloads\GitHub\Social_Media\posts.json
+...   post_json = json.load(f)
+...
+
+
+
+>>> for post in post_json:
+...   post = Post(title=post['title'], content=post['content'], author_id=post['user_id'])
+...   post.save()
+...
+>>> exit()
+
+--------------------------------------
+from django.core.paginator import Paginator
+posts=['1','2','3','4','5','6','7','8','9']
+p=Paginator(posts,2)
+p.num_pages
+for i in p.page_range:
+    print(i)
+p1=p.page(1)     #<Page 1 of 5>
+p1.number         #1
+p1.object_list   #['1', '2']
+p1.has_previous() #False
+p1.has_next()   #True
+p1.next_page_number() #2
+
+
+------------------------------------------------------
+------------------------views.py------------------------------ #https://stackoverflow.com/questions/74615456/how-to-add-pagination-in-django
+
+from django.core.paginator import Paginator
+from django.shortcuts import render
+
+def car(request, category_id=None):
+    products = Products.objects.all() 
+
+    if category_id:
+        products = Product.objects.filter(category__id=category_id)
+
+    paginator = Paginator(products, 3)
+
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    context = {
+        'page_obj': page_obj
+    }
+
+    return render(request, 'car.html', context)
+    -------------------------------tempate.html --------------------------------
+    {% for car in page_obj %}
+    {{ car.category }}<br>
+    ...
+{% endfor %}
+
+<div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+-----------------------------urls.py ----------------------------------
+path('cars/category/<int:category_id>/', views.car, name='car'),

@@ -38,7 +38,9 @@ v_10     create PostListView ,PostDetailView,PostCreateView,PostUpdateView,PostD
          change Authentication system by LoginRequiredMixin for log in 
          UserPassesTestMixin   for not change any content he is not owner
 ----------------------------------------------------
-day_11    add posts from json file by shell
+v_11    add posts from json file by shell
           create user post for show all post's user
           create  Pagination for posts    in home and user  page 
 -----------------------------------------------    
+v_12     Email and Password Reset
+-----------------------------------------------

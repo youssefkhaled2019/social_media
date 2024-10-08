@@ -191,3 +191,9 @@ def car(request, category_id=None):
 </div>
 -----------------------------urls.py ----------------------------------
 path('cars/category/<int:category_id>/', views.car, name='car'),
+
+
+
+---------------------
+https://letscodemore.medium.com/solved-smtplib-smtpauthenticationerror-535-b5-7-8-username-and-password-not-accepted-2b26110f9f3b
+#app passwords in google seting 
